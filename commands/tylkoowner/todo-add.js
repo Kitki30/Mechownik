@@ -21,7 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
-	
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
@@ -36,7 +36,7 @@ module.exports = {
 
   .setDMPermission(true),
   async execute(interaction) {
-if (interaction.user.id =="1167508158642651146"){
+if (interaction.user.id ==config.owner){
 		const reason = interaction.options.getString('todo');
 var fs = require('fs')
 fs.appendFile('todo.md', `[Pending] ${reason}`, async function (err) {

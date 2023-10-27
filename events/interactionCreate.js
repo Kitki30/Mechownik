@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var configs = require('../config.js');
 const { Events, Collection, EmbedBuilder} = require('discord.js');
 const delay = require(`delay`);
 const config = process.env;
@@ -94,7 +95,7 @@ Model.findOneAndUpdate(
   console.log(e)
     });
       return;
-      await command.execute(interaction);      interaction.reply("Bot wyłączony pisz do <@657229045624471556>")
+      await command.execute(interaction);      
      
     } catch (error) {
       let totalSeonds = (startTime - Date.now());

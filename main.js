@@ -73,14 +73,15 @@ client.commands = new Collection();
 // Event handler start
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
-
+console.log(`[Events] Event handler loading`.blue);
 for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
-client.on("debug", ( e ) => console.log(e));
 	const event = require(filePath);
 	if (event.once) {
+    console.log(`[Events] Event loaded ${event.name}, once`.green)
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
+console.log(`[Events] Event loaded ${event.name}`.green)
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
