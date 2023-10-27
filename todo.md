@@ -1,1 +1,1 @@
-[Pending] Add config file for storing settings[Pending] test
+[Done] Add config file for storing settings
