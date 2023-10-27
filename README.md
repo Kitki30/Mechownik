@@ -16,7 +16,7 @@ How to start:
 4. Run ``node main.js`` command to start bot.
 **Now bot should work!!!**
 
-### Mechownik bot env variable template
+### Mechownik bot env variabls
 Templates:
 
 **.env file:**
