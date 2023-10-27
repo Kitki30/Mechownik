@@ -69,48 +69,6 @@ console.log(`[FASTSTART] Fast start enabled.`.green);
 client.cooldowns = new Collection();
 client.commands = new Collection();
 
-try {
-      app.listen(8080);
-      app.listen(80);
-
-        const port = process.env.PORT;
-
-  app.get('/', async ({ query }, response) => {
-	
-
-	return response.sendFile('public/index.html', { root: '.' });
-});
-const Topgg = require("@top-gg/sdk")
-
-const webhook = new Topgg.Webhook(process.env.topgg)
-
-app.post("/topgg/vote", webhook.listener(async vote => {
-  // vote
-  console.log(vote.user);
-  let user = vote.user;
-  let userobject = await client.users.fetch(user);
-    
-   
-      let votechannel=await client.channels.fetch('1167080670498131969');
-      
-        const embed = new EmbedBuilder()
-	.setColor(0x0099FF)
-	.setTitle('Top.gg')
-	
-	.setDescription(`Użytkownik ${userobject.displayName} zagłosował na bota na top.gg!\nNaciśnij przycisk na dole i zagłosuj!`);
-	votechannel.send({embeds:[embed]});
-        const embeddm= new EmbedBuilder()
-	.setColor(0x0099FF)
-	.setTitle('Top.gg')
-	
-	.setDescription(`Dziękuje za zagłosowanie na bota w top.gg!😸`);
-        userobject.send({embeds:[embeddm]});
-      
-}))
-}
-      catch(er){
-        console.log(er);
-      }
 
 // Event handler start
 const eventsPath = path.join(__dirname, 'events');
@@ -216,6 +174,48 @@ mongoose.connect(process.env.MONGODBURL,{ useUnifiedTopology: true, useNewUrlPar
       console.error(error);
     }
   });
+try {
+      app.listen(8080);
+      app.listen(80);
+
+        const port = process.env.PORT;
+
+  app.get('/', async ({ query }, response) => {
+	
+
+	return response.sendFile('public/index.html', { root: '.' });
+});
+const Topgg = require("@top-gg/sdk")
+
+const webhook = new Topgg.Webhook(process.env.topgg)
+
+app.post("/topgg/vote", webhook.listener(async vote => {
+  // vote
+  console.log(vote.user);
+  let user = vote.user;
+  let userobject = await client.users.fetch(user);
+    
+   
+      let votechannel=await client.channels.fetch('1167080670498131969');
+      
+        const embed = new EmbedBuilder()
+	.setColor(0x0099FF)
+	.setTitle('Top.gg')
+	
+	.setDescription(`Użytkownik ${userobject.displayName} zagłosował na bota na top.gg!\nNaciśnij przycisk na dole i zagłosuj!`);
+	votechannel.send({embeds:[embed]});
+        const embeddm= new EmbedBuilder()
+	.setColor(0x0099FF)
+	.setTitle('Top.gg')
+	
+	.setDescription(`Dziękuje za zagłosowanie na bota w top.gg!😸`);
+        userobject.send({embeds:[embeddm]});
+      
+}))
+}
+      catch(er){
+        console.log(er);
+      }
 
     
 // Webhook options can be found here if you wish to include them, currently the only one is an error callback: https://topgg.js.org/interfaces/webhookoptions
