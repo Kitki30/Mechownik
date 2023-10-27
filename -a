@@ -1,8 +1,0 @@
-[33m8668efd[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD@{4}
-[33med3545e[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{1}: pull --rebase origin main (start): checkout ed3545e8aed3540cc7deda0132a0edb9ee99bb59
-[33m91a9524[m[33m ([m[1;31morigin/Beta[m[33m, [m[1;32mmain[m[33m, [m[1;32mBeta[m[33m)[m HEAD@{2}: checkout: moving from Beta to main
-[33m91a9524[m[33m ([m[1;31morigin/Beta[m[33m, [m[1;32mmain[m[33m, [m[1;32mBeta[m[33m)[m HEAD@{3}: checkout: moving from main to Beta
-[33m91a9524[m[33m j kc([m[1;31morigin/Beta[m[33m, [m[1;32mmain[m[33m, [m[1;32mBeta[m[33m)[m HEAD@{4}: commit: Bot
-[33m8668efd[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{5}: checkout: moving from main to main
-[33m8668efd[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{6}: checkout: moving from main to main
-[33m8668efd[m[33m ([m[1;36mHEAD[m[33m)[m HEAD@{7}: commit (initial): Initial commit
