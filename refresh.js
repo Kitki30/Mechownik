@@ -58,6 +58,6 @@ console.log(`[Rest] Puting commands.`.yellow);
   
 
   
-});
+})();
 
   
