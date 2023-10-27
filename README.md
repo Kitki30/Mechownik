@@ -12,7 +12,7 @@ What you will need:
 How to start:
 1. Download latest release. 
 2. Unpack downloaded file.
-3. Change .env file with your settings (see Mechownik bot env variables template)
+3. Change .env file with your settings ([see Mechownik bot env variables template](https://github.com/Kitki30/Mechownik/blob/main/README.md#mechownik-bot-env-variable-template))
 4. Run ``node main.js`` command to start bot.
 **Now bot should work!!!**
 
