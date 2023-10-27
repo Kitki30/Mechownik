@@ -25,7 +25,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 let start =Date.now();
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('bot-info')
+    .setName('boti-info')
     .setDescription('Informacje o bocie.'),
   async execute(interaction) {
      

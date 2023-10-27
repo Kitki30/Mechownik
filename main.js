@@ -84,8 +84,7 @@ client.on("debug", ( e ) => console.log(e));
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
-client.rest.on('rateLimited', (e)  =>{
-               console.log(`[REST] Ratelimited:(`)});
+
 
 // Event handler end
 console.log(`\n[Commands] Loading commands.`.blue);
@@ -109,29 +108,7 @@ console.log(`[Commands] Command loaded "${command.data.name}"`.green);
     }
   }
 console.log(`[Commands] Loaded ${totalcommand} commands`.blue); 
-  const { REST, Routes } = require('discord.js');
-  require('dotenv').config();
-console.log(`\n[Commands] Registering commands.`.blue); 
-  const commands = [];
-let totalcommandreg=0;
-  for (const folder of commandFolders) {
-    // Grab all the command files from the commands directory you created earlier
-    const commandsPath = path.join(foldersPath, folder);
-    const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-    // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
-    
-    for (const file of commandFiles) {
-      const filePath = path.join(commandsPath, file);
-      const command = require(filePath);
-      if ('data' in command && 'execute' in command) {
-        totalcommandreg++;
-console.log(`[Commands] Command registered "${command.data.name}"`.green);commands.push(command.data.toJSON());
-      } else {
-        console.log(`[Commands] unable to load command.`.yellow);
-      }
-    }
-  }
-console.log(`[Commands] Registered ${totalcommandreg} commands`.blue);
+   
 const delay = require(`delay`);
   // Construct and prepare an instance of the REST module
   
@@ -149,6 +126,17 @@ client.login(process.env.TOKEN)
 mongoose.connect(process.env.MONGODBURL,{ useUnifiedTopology: true, useNewUrlParser: true });
       const stop = Date.now();
     console.log(`[Client] Time Taken to start Client = ${(stop - start)/1000} seconds`.green);  
+ 
+process.on('unhandledRejection', (reason, promise) => {
+    console.error("[ANTI-CRASH] An error has occured and been successfully handled: [unhandledRejection]".red);
+    console.error(promise, reason);
+});
+
+process.on("uncaughtException", (err, origin) => {
+    console.error("[ANTI-CRASH] An error has occured and been successfully handled: [uncaughtException]".red);
+    console.error(err, origin);
+});
+  
 try {
       app.listen(8080);
       app.listen(80);
@@ -189,53 +177,4 @@ app.post("/topgg/vote", webhook.listener(async vote => {
 }))
 }
       catch(er){
-        console.log(er);
-      }
-
-    
-  // and deploy your commands!
-  (async () => {
-    try {
-      console.log(`[Rest] Setting rest token`.yellow)
-      const rest = new REST().setToken(process.env.TOKEN);
-     console.log(`[Rest] Rest token set`.green); 
-      
-      
-      
-      // The put method is used to fully refresh all commands in the guild with the current set
-console.log(`[Rest] Puting commands.`.yellow);
-      const data = await rest.put(
-        Routes.applicationCommands(process.env.CLIENTID),
-        { body: commands },
-      );
-      console.log(`[Rest] Commands putted`);
-      
-      
-       
-
-      
-      
-    } catch (error) {
-      // And of course, make sure you catch and log any errors!
-      console.error(error);
-    }
-  });
-
-// Webhook options can be found here if you wish to include them, currently the only one is an error callback: https://topgg.js.org/interfaces/webhookoptions
-// You'll have to set up a webhook on top.gg in your bot's settings
-
-  
-    // get the user from their user id, then send a DM
-
-
-process.on('unhandledRejection', (reason, promise) => {
-    console.error("[ANTI-CRASH] An error has occured and been successfully handled: [unhandledRejection]".red);
-    console.error(promise, reason);
-});
-
-process.on("uncaughtException", (err, origin) => {
-    console.error("[ANTI-CRASH] An error has occured and been successfully handled: [uncaughtException]".red);
-    console.error(err, origin);
-});
-  
-  
+        console.log(er);}   
