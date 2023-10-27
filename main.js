@@ -135,26 +135,7 @@ console.log(`[Commands] Registered ${totalcommandreg} commands`.blue);
 const delay = require(`delay`);
   // Construct and prepare an instance of the REST module
   
-
-  // and deploy your commands!
-  (async () => {
-    try {
-      const rest = new REST().setToken(process.env.TOKEN);
-      
-      
-      
-      
-      // The put method is used to fully refresh all commands in the guild with the current set
-      const data = await rest.put(
-        Routes.applicationCommands(process.env.CLIENTID),
-        { body: commands },
-      );
-      
-      
-      
-       
-
-      await client.login(process.env.TOKEN)
+client.login(process.env.TOKEN)
   
     
     
@@ -168,12 +149,6 @@ const delay = require(`delay`);
 mongoose.connect(process.env.MONGODBURL,{ useUnifiedTopology: true, useNewUrlParser: true });
       const stop = Date.now();
     console.log(`[Client] Time Taken to start Client = ${(stop - start)/1000} seconds`.green);  
-      
-    } catch (error) {
-      // And of course, make sure you catch and log any errors!
-      console.error(error);
-    }
-  });
 try {
       app.listen(8080);
       app.listen(80);
@@ -218,6 +193,34 @@ app.post("/topgg/vote", webhook.listener(async vote => {
       }
 
     
+  // and deploy your commands!
+  (async () => {
+    try {
+      console.log(`[Rest] Setting rest token`.yellow)
+      const rest = new REST().setToken(process.env.TOKEN);
+     console.log(`[Rest] Rest token set`.green); 
+      
+      
+      
+      // The put method is used to fully refresh all commands in the guild with the current set
+console.log(`[Rest] Puting commands.`.yellow);
+      const data = await rest.put(
+        Routes.applicationCommands(process.env.CLIENTID),
+        { body: commands },
+      );
+      console.log(`[Rest] Commands putted`);
+      
+      
+       
+
+      
+      
+    } catch (error) {
+      // And of course, make sure you catch and log any errors!
+      console.error(error);
+    }
+  });
+
 // Webhook options can be found here if you wish to include them, currently the only one is an error callback: https://topgg.js.org/interfaces/webhookoptions
 // You'll have to set up a webhook on top.gg in your bot's settings
 
