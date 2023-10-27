@@ -47,7 +47,7 @@ console.log(`[Rest] Puting commands.`.yellow);
       console.log(`[Rest] Commands putted`);
       
       
-       
+       process.exit();
 
       
       

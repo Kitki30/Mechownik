@@ -30,6 +30,6 @@ module.exports = {
 	name: Events.GuildCreate,
 	once: false,
 	async execute(guild) {
-    client.channels.cache.get('1163186545763823706').send('Dodano bota na nowy serwer')
+    guild. client.channels.cache.get('1163186545763823706').send('Dodano bota na nowy serwer')
 	},
 };

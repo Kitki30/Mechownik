@@ -1,0 +1,1 @@
+[Pending] Add config file for storing settings

@@ -28,11 +28,7 @@ module.exports = {
 	name: Events.MessageCreate,
 	once: false,
 	async execute(message) {
-    if (message.author.bot) return;
-    if (message.partial) return message.reply('**Witaj,**\nJestem Mechownik!\nWpisz komende /help aby wyświetlić dostępne komendy!');
-    if (message.guildId== '1160918483291357298') {
-      
-if(message.channel.id == '1163105932541165660') {
+    if(message.channel.id == '1163105932541165660') {
   const client = message.client
   let guilds = client.guilds.cache;
  guilds.forEach(async (guild) => {
@@ -46,7 +42,7 @@ if(message.channel.id == '1163105932541165660') {
     
 const channel = client.channels.cache.get(channelId);
 if (channel) {
-  channel.send(message.content);
+  channel.send({content:message.content, embeds:message.embeds});
 } 
 
 
@@ -57,6 +53,11 @@ if (channel) {
   }); 
   message.react("👍");
 } 
+    if (message.author.bot) return;
+    if (message.partial) return message.reply('**Witaj,**\nJestem Mechownik!\nWpisz komende /help aby wyświetlić dostępne komendy!');
+    if (message.guildId== '1160918483291357298') {
+      
+
       
 
     if(message.channel.id == '1161008804125749420') {
