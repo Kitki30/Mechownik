@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder} = require('discord.js');
 const { ButtonBuilder, ButtonStyle } = require('discord.js')
 const { ActionRowBuilder} = require('discord.js');
@@ -52,7 +53,7 @@ if (interaction.member.voice.channelId == null){
           .setDescription(`Najpierw dołącz do kanału głosowego.`)
            .setColor([255,0,0])
            	
-          .setFooter({ text: 'Bot mechownik'})
+          .setFooter({ text: config.botname})
         
   interaction.editReply({content:"", embeds:[embed]})
   
@@ -70,8 +71,8 @@ if (conn) {
           .setDescription(`Bot już połączony!\nPoczekaj aż bot skończy grać lub wpisz /stop.`)
            .setColor([255,0,0])
            	
-          .setFooter({ text: 'Bot mechownik'})
-  interaction.editReply({content:"", embeds:[embeed]})
+          .setFooter({ text: config.botname})
+    interaction.editReply({content:"", embeds:[embeed]})
       await delay(10000);
       interaction.deleteReply()      
    
@@ -105,8 +106,7 @@ const play = require('play-dl'); // Everything
           .setDescription(`Bot wejdzie na kanał i puści **${searched[0].title}**.`)
            .setColor([255,255,0])
            	
-          .setFooter({ text: 'Bot mechownik'})
-        
+          .setFooter({ text: config.botname})
 	const response =	await interaction.editReply({
     content:"", 
 			embeds: [embed],
@@ -117,7 +117,7 @@ try {
 	const confirmation = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
 
 	if (confirmation.customId === 'confirm') {
-    await confirmation.update({embeds:[], content:"Dołączanie..."})
+    await confirmation.update({components:[], embeds:[], content:"Dołączanie..."})
     const { joinVoiceChannel, AudioPlayerStatus} = require('@discordjs/voice');
 const connection1 = joinVoiceChannel({
 	channelId: interaction.member.voice.channelId,
@@ -149,7 +149,7 @@ player.play(resource);
            .setTitle(`Gram **${searched[0].title}**.`)
            .setColor([0,255,0])
            	
-          .setFooter({ text: 'Bot mechownik'})
+          .setFooter({ text: config.botname})
         
 interaction.editReply({ content:"", embeds:[embedsyy] , components: [] }); 
 let VC = await interaction.client.channels.cache.get(voicec);
@@ -193,7 +193,7 @@ let inter =setInterval(async() => {
           
            .setColor([255,0,0])
            	
-          .setFooter({ text: 'Bot mechownik'})
+          .setFooter({ text: config.botname})
         
 		await confirmation.update({ embeds:[embedi] , components: [] });
     
@@ -210,7 +210,7 @@ let inter =setInterval(async() => {
           .setDescription(`Anulowano. Przez brak wyboru w minute.`)
            .setColor([255,0,0])
            	
-          .setFooter({ text: 'Bot mechownik'})
+          .setFooter({ text: config.botname})
         
 	await interaction.editReply({ embeds:[embeds] , components: [] });
   

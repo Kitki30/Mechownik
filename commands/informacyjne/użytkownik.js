@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-
+var config = require('../../config.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('user-info')
@@ -53,9 +53,9 @@ const embed = new EmbedBuilder()
            .setColor([0,255,0])
            .setDescription(`Nazwa użytkownika: **${target.displayName}**\nBot?: **${bot}**\nID: **${target.user.id}**\nWyciszony?: ${mutedhehe}`)
  .setAuthor({ name: 'Informacje o '+target.displayName, iconURL: avatar}) 	.setThumbnail(avatar)
-          .setFooter({ text: 'Bot mechownik'})
+          .setFooter({ text: config.botname})
        interaction.reply({ embeds: [embed] }); 
 
-    console.log('Użyto komendy /user-info');
+    
   },
 };

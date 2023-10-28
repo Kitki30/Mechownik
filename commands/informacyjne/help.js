@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
@@ -37,8 +38,7 @@ module.exports = {
       .setTitle(`Komendy Mechownika`)
       .setColor([0, 255, 0])
       .setDescription(`**ROZRYWKA**\n**/kod** - jeśli posiadasz kod wpisz go i zobacz co się stanie\n**/avatar** - kradnie awatar użytkownika\n**/httpcat** - wysyła zdjęcie kota zależnego od statusu HTTP jaki podasz np. ${kod}\n**/cat** - wysyła losowe zdjęcie kota\n**/dog** - wysyła losowe zdjęcie psa\n\n**INFORMACYJNE**\n**/help** - wyświetla komendy bota\n**/ping** - wyświetla opóźnienie bota\n**/uptime** - wyświetla czas pracy bota\n**/user-info** - informacje o użytkowniku\n\n**MODERACYJNE**\n**/kick** - wyrzuca użytkownika (Wymagana permisja do wyrzucania)\n**/ban** - Banuje użytkownika (Wymagana permisja do banowania)`)
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
     interaction.reply({ embeds: [embed] });
-    console.log('Użyto komendy /help');
   },
 };

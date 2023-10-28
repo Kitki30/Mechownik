@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder, client, GatewayIntentBits } = require('discord.js');let start = Date.now();
 module.exports = {
 
@@ -43,8 +44,8 @@ let seconds = Math.floor(totalSeconds % 60);
       .setTitle(`Czas pracy bota(Uptime): ${days}d ${hours}h ${minutes}m ${seconds}s`)
       .setColor([0, 255, 0])
       
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
     interaction.editReply({content:"", embeds: [embed] });
-    console.log('Użyto komendy /uptime');
+    
   },
 };

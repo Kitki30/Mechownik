@@ -21,12 +21,13 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const querystring = require('querystring');
 const r2          = require('r2');
 require('dotenv').config();
 const DOG_API_URL   = "https://api.thecatapi.com/"
-const DOG_API_KEY   = process.env.catapikey; // get a free key from - https://thedogapi.com/signup
+const DOG_API_KEY   = process.env.catapikey;
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('cat')
@@ -35,6 +36,8 @@ module.exports = {
   async execute(interaction) {
     // interaction.user is the object representing the User who ran the command
     // interaction.member is the GuildMember object, which represents the user in the specific guild
+    if(config.funcat==false)
+      return interaction.reply("Komenda wyłączona przez włąściciela bota");
     var images = await loadImage();
     var image = images[0];
   
@@ -45,9 +48,9 @@ module.exports = {
       .setTitle(`Kot :cat2:`)
       .setColor([0, 255, 0])
       .setImage(image.url)
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
     interaction.reply({ embeds: [embed] });
-    console.log('Użyto komendy /cat');
+  
   },
 };
 async function loadImage()

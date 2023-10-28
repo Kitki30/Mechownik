@@ -44,21 +44,22 @@ fs.appendFile('todo.md', `[Pending] ${reason}`, async function (err) {
     const embed = new EmbedBuilder()
       .setTitle(`Failed to write file\n${err} `)
       .setColor([255, 0, 0])
-           .setFooter({ text: 'Bot mechownik'})
+      .setFooter({ text: config.botname}) 
     interaction.reply({ embeds: [embed] });
   } else {
     const embed = new EmbedBuilder()
       .setTitle(`Added to list`)
       .setColor([255, 0, 0])
-           .setFooter({ text: 'Bot mechownik'})
+           .setFooter({ text: config.botname})
+    if (config.sendtodo){
     const embeds= new EmbedBuilder()
       .setTitle(`Added to todo list\n[Pending] ${reason}`)
       .setColor([255, 0, 0])
-           .setFooter({ text: 'Bot mechownik'})
+           .setFooter({ text: config.botname})
     
 
-const channel = await interaction.client.channels.fetch('1163105932541165660')
-channel.send({embeds:[embeds]})
+const channel = await interaction.client.channels.fetch(config.todochannel)
+channel.send({embeds:[embeds]})}
     interaction.reply({ embeds: [embed] }); 
   }
 })

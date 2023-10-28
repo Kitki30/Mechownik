@@ -36,7 +36,7 @@ module.exports = {
         .setTitle(`Avatar użytkownika ${target.username}`)
         .setImage(avatar)
         .setColor([0, 255, 0])
-             .setFooter({ text: 'Bot mechownik'})
+             .setFooter({ text: config.botname})
         interaction.reply({embeds: [embed]});
   },
 };

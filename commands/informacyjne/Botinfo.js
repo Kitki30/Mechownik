@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 let start =Date.now();
 module.exports = {
@@ -67,9 +68,9 @@ const embed = new EmbedBuilder()
            
            
            .setColor([0,255,0])
-           .setDescription(`**Podstawowe Informacje:**\n> Nazwa użytkownika: **${interaction.client.user.tag}**\n> Bot?: **Tak**\n> ID: **${interaction.client.user.id}**\n\n**Status:**\n> Ping: ${mesg.createdTimestamp - interaction.createdTimestamp}ms\n> Czas Pracy: ${days}d ${hours}h ${minutes}m ${seconds}s\n> Ram: ${used} MB/1024 MB\n> Użycie CPU: ${getCpuUsage()}%`)
+           .setDescription(`**Podstawowe Informacje:**\n> Nazwa użytkownika: **${interaction.client.user.tag}**\n> Bot?: **Tak**\n> ID: **${interaction.client.user.id}**\n\n**Status:**\n> Ping: ${mesg.createdTimestamp - interaction.createdTimestamp}ms\n> Czas Pracy: ${days}d ${hours}h ${minutes}m ${seconds}s\n> Ram: ${used} MB/${config.ram} MB\n> Użycie CPU: ${getCpuUsage()}%`)
  
-          .setFooter({ text: 'Bot mechownik'});
+          .setFooter({ text: config.botname});
        interaction.editReply({ content:"",embeds: [embed] }); 
 
     

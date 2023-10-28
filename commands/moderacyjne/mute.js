@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 const { SlashCommandBuilder, EmbedBuilder, PermissionsBitField } = require('discord.js');
-
+var config = require('../../config.js');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('mute')
@@ -58,7 +58,7 @@ await interaction.guild.members.ban(użytkownik);
         .addFields({ name: 'Serwer', value: `> ${interaction.guild.name}`, inline: true})
         .addFields({ name: 'Powód', value: `> ${reason}`, inline: true})
         .addFields({ name: 'Czas', value: `> ${czas}`, inline: true})
-                  .setFooter({ text: 'Bot mechownik'})
+                  .setFooter({ text: config.botname})
         .setTimestamp()
 
         const embed = new EmbedBuilder()
@@ -67,7 +67,7 @@ await interaction.guild.members.ban(użytkownik);
         .addFields({ name: 'Użytkownik', value: `> ${username.tag}`, inline: true})
         .addFields({ name: 'Powód', value: `> ${reason}`, inline: true})
         .addFields({ name: 'Czas', value: `> ${czas}`, inline: true})
-                  .setFooter({ text: 'Bot mechownik'})
+                  .setFooter({ text: config.botname})
         .setTimestamp()
 
         user.timeout(time).catch(err => {

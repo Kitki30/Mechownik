@@ -22,6 +22,7 @@
 * SOFTWARE.
 */
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+var config = require('../../config.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('ping')
@@ -36,8 +37,7 @@ module.exports = {
  const embedd = new EmbedBuilder()
       .setTitle(`Pong! Opóźnienie bota:${mesg.createdTimestamp - interaction.createdTimestamp}ms`)
       .setColor([0, 255, 0])
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
     await interaction.editReply({ embeds: [embedd] });
-    console.log(`Użyto komendy /ping Ping bota: ${mesg.createdTimestamp - interaction.createdTimestamp}ms`);
   },
 };

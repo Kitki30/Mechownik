@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const delay = require(`delay`);
 const config = process.env;
@@ -33,38 +34,10 @@ module.exports = {
 			.setDescription('Tu wpisz kod.')),
   async execute(interaction) {
   const prop = interaction.options.getString('kod');
-    if (prop == "botToggle"){
-      if (interaction.user.id == "657229045624471556") {
-      if (config.botOn == "true") {
-        config.botOn = "false";
-        interaction.reply(`Komendy bota wyłączone!`)
-        interaction.client.user.setStatus('idle');
-        console.clear()
-         console.log(`=============================`);
-         console.log(`Zalogowano jako ${interaction.client.user.tag}`);
-         console.log(`ID: ${interaction.client.user.id}`);
-         console.log('Status bota:', interaction.client.user.presence.status);
-         console.log(`Status komend: ${config.botOn}`);
-         console.log(`=============================`);
-        return;
-      }
-      if (config.botOn == "false") {
-        config.botOn = "true";
-        interaction.reply(`Komendy bota włączone!`)
-        interaction.client.user.setStatus('dnd');
-         console.clear()
-         console.log(`=============================`);
-         console.log(`Zalogowano jako ${interaction.client.user.tag}`);
-         console.log(`ID: ${interaction.client.user.id}`);
-         console.log('Status bota:', interaction.client.user.presence.status);
-         console.log(`Status komend: ${config.botOn}`);
-         console.log(`=============================`);
-        return;
-      }else {
-        return;
-      }
-      }
-    }
+    
+        
+      
+    
     if (config.botOn == "true") {
       if (prop == "skibididom") {
           let 
@@ -122,17 +95,8 @@ module.exports = {
      let embedErr = new EmbedBuilder()
       .setColor([255, 0, 0])
        .setTitle("Nie ma takiego kodu!")
-.setFooter({ text: 'Bot Kitki30'});
+.setFooter({ text: config.botname})
     interaction.reply({ embeds: [embedErr] });
-    return;}else {
-      const embedesss = new EmbedBuilder()
-      .setTitle(`Wystąpił błąd podczas wykonywania komendy!`)
-      .setDescription(`Użyta komenda: **/kod**\nBłąd: **Komendy bota wyłączone!**\n\nSprawdź status bota: [Klik](https://bot.kitki30.tk)`)
-      .setColor([255, 0,0])
-     .setFooter({ text: 'Bot Kitki30'});
-      interaction.reply({ embeds: [embedesss], ephemeral: true });
-      return;
-    }
+    return;}}
   },
 };
-// .setFooter({ text: 'Bot FFX Team - Stworzony przez ! Kitki30 !#4111', iconURL: 'https://i.imgur.com/TOae5Xj.png' });

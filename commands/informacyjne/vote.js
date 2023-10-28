@@ -22,21 +22,24 @@
 * SOFTWARE.
 */
 const { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
-
-
+var config = require('../../config.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('vote')
     .setDescription('Wyświetla link do głosowania na top.gg'),
   async execute(interaction) {
+    if (config.topgg=false){
+      interaction.reply("Komenda wyłączona przez właściciela bota")
+      return;
+      }
 const button = new ButtonBuilder()
 	.setLabel('Top.gg')
-	.setURL('https://top.gg/bot/1101105727340286022/vote')
+	.setURL(config.topgglink)
 	.setStyle(ButtonStyle.Link);
     
     const embed = new EmbedBuilder()
       .setTitle(`Zagłosuj na bota!`)
-      .setDescription('Poprostu naciśnij dowolny przycisk na dole, aby wesprzeć mnie w programowaniu bota!')
+      .setDescription(config.topggvotetext)
       .setColor([0, 255, 0])
       
 		const row = new ActionRowBuilder()

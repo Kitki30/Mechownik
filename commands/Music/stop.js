@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const delay = require(`delay`);
 module.exports = {
@@ -46,7 +47,7 @@ if (interaction.member.voice.channelId == null){
           .setDescription(`Najpierw dołącz do kanału głosowego.`)
            .setColor([255,0,0])
            	
-          .setFooter({ text: 'Bot mechownik'})
+          .setFooter({ text: config.botname})
         
   interaction.reply({embeds:[embed]})
   

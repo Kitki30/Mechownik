@@ -21,7 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
-	
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
@@ -55,9 +55,9 @@ module.exports = {
     const embed = new EmbedBuilder()
       .setTitle(`Wyrzucono ${target.tag} powód: ${reason}`)
       .setColor([255, 0, 0])
-           .setFooter({ text: 'Bot mechownik'})
+           .setFooter({ text: config.botname})
     interaction.reply({ embeds: [embed] });
     
-    console.log('Użyto komendy /kick');
+    
   },
 };

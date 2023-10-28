@@ -22,7 +22,7 @@
 * SOFTWARE.
 */
 const { SlashCommandBuilder, EmbedBuilder, PermissionsBitField } = require('discord.js');
-
+var config = require('../../config.js');
 module.exports = {
     data: new SlashCommandBuilder()
     .setName('unmute')
@@ -47,7 +47,7 @@ module.exports = {
         .setTitle(`Odciszyliśmy cię na serwerze "${interaction.guild.name}"`)
         .addFields({ name: 'Serwer', value: `> ${interaction.guild.name}`, inline: true})
         .addFields({ name: 'Powód', value: `> ${powód}`, inline: true})
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
         .setTimestamp()
 
         const embed = new EmbedBuilder()
@@ -55,7 +55,7 @@ module.exports = {
         .setTitle(`Użytkownik został odciszony!`)
         .addFields({ name: 'Użytkownik', value: `> ${nazwaUżytkownika.tag}`, inline: true})
         .addFields({ name: 'Powód', value: `> ${powód}`, inline: true})
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
 
         await interaction.reply({ embeds: [embed] })
         await użytkownik.send({ embeds: [dmembed] }).catch(err => {

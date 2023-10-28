@@ -23,7 +23,7 @@
 */
 
 const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-
+var config = require('../../config.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('warn')
@@ -53,7 +53,7 @@ Model.findOneAndUpdate(
         .setTitle(`Nadano ostrzeżenie użytkownikowi!`)
         .addFields({ name: 'Użytkownik', value: `${target.displayName}`, inline: true })
         .addFields({ name: 'Warny', value: `${doc.warns}`, inline: true })
-        .setFooter({ text: 'Bot mechownik' })
+        .setFooter({ text: config.botname})
         .setTimestamp();
 
       interaction.reply({ embeds: [embed] });
@@ -64,7 +64,7 @@ Model.findOneAndUpdate(
         .setColor([255, 0, 0])
         .setTitle(`Błąd!`)
         .setDescription(`Błąd przy dawaniu ostrzeżenia!`)
-        .setFooter({ text: 'Bot mechownik' })
+        .setFooter({ text: config.botname})
         .setTimestamp();
 
       interaction.reply({ embeds: [embed] });

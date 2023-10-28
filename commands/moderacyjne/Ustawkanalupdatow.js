@@ -23,7 +23,7 @@
 */
 
 const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-
+var config = require('../../config.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('set-update-channel')
@@ -50,7 +50,7 @@ Model.findOneAndUpdate(
         .setTitle(`Ustawiono!`)
         .addFields({ name: 'Ustawienie', value: `Kanał Wysyłania Aktualizacji Bota`, inline: true })
         
-        .setFooter({ text: 'Bot mechownik' })
+        .setFooter({ text: config.botname})
         .setTimestamp();
 
       interaction.reply({ embeds: [embed] });
@@ -61,7 +61,7 @@ Model.findOneAndUpdate(
         .setColor([255, 0, 0])
         .setTitle(`Błąd!`)
         
-        .setFooter({ text: 'Bot mechoenik' })
+        .setFooter({ text: config.botname})
         .setTimestamp();
 
       interaction.reply({ embeds: [embed] });

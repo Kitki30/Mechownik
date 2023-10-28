@@ -23,7 +23,7 @@
 */
 	
 const { SlashCommandBuilder, EmbedBuilder, PermissionFlagsBits } = require('discord.js');
-
+var config = require('../../config.js');
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('ban')
@@ -51,7 +51,7 @@ module.exports = {
     const embed = new EmbedBuilder()
       .setTitle(`Zbanowano ${target.tag} powód: ${reason}`)
       .setColor([255, 0,0])
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
     interaction.reply({ embeds: [embed] });
     
     console.log('Użyto komendy /ban');
