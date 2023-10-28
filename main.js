@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('./config.js');
 const start = Date.now()
 const express = require("express");
 const app = express();
@@ -36,6 +37,7 @@ console.log(`[Version] v4(Open Source update)`.yellow);
 console.log(`[Author] Kitki30`.blue)
 console.log(`[Info] Made on discord.js v14`.yellow)
 console.log(`[Info] Copyright (c) 2023 Kitki30\n\n[Info] Logs will be displayed here:`.blue);
+
 //let ratelimited=false;
 // ratelimited = true; // Tryb ratelimitu
 //ratelimited=false; //Wyłącz tryb ratelimitu

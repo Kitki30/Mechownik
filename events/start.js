@@ -29,7 +29,11 @@ module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	async execute(client) {
+    var config = require('../config.js');
+    if(config.clrafterlogin==true)
+      console.clear();
   console.log('[Client] Client Ready!'.green)
+    
     
 	},
 };
