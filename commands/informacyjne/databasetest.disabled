@@ -21,7 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
-/* const { SlashCommandBuilder, EmbedBuilder, client, GatewayIntentBits } = require('discord.js');let start = Date.now();
+const { SlashCommandBuilder, EmbedBuilder, client, GatewayIntentBits } = require('discord.js');let start = Date.now();
 const Model = require('/home/runner/PublicBot/models/test.js')
 module.exports = {
 
@@ -35,4 +35,4 @@ module.exports = {
 let document= await Model.create({testvar:"okok420"})
     document.save();
   },
-}; */
+};
