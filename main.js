@@ -32,7 +32,7 @@ require('dotenv').config();
 require('colors');
 console.log(`[Information]`.blue);
 console.log(`[Name] ${botname}`.green);
-console.log(`[Version] v3(Music update)`.yellow);
+console.log(`[Version] v4(Open Source update)`.yellow);
 console.log(`[Author] Kitki30`.blue)
 console.log(`[Info] Made on discord.js v14`.yellow)
 console.log(`[Info] Copyright (c) 2023 Kitki30\n\n[Info] Logs will be displayed here:`.blue);
