@@ -6,6 +6,17 @@
 # Mechownik
 ## Open Source Discord Bot
 
+### Functions:
+
+- Todo command for adding/reading todo.md on discord
+- Slash commands
+- Cat and Dog command
+- Not using much ram
+
+### Add our public bot to your server
+
+![AddBot](https://img.shields.io/badge/Add_bot_to-discord_server-blue?style=for-the-badge&link=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorize%3Fclient_id%3D1101105727340286022%26scope%3Dbot%26permissions%3D8)
+
 ### Quick start guide:
 
 What you will need:
