@@ -15,7 +15,7 @@
 
 ### Add our public bot to your server
 
-![AddBot](https://img.shields.io/badge/Add_bot_to-discord_server-blue?style=for-the-badge&link=https%3A%2F%2Fdiscord.com%2Foauth2%2Fauthorize%3Fclient_id%3D1101105727340286022%26scope%3Dbot%26permissions%3D8)
+[![AddBot](https://img.shields.io/badge/Add_bot_to-discord_server-blue?style=for-the-badge)](https://discord.com/oauth2/authorize?client_id=1101105727340286022&scope=bot&permissions=8)
 
 ### Quick start guide:
 
