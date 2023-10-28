@@ -43,7 +43,7 @@ module.exports = {
       .setTitle(`Wystąpił błąd podczas wykonywania komendy!`)
       .setDescription(`Użyta komenda: **/${command.data.name}**\nBłąd: **Komendy bota wyłączone!**`)
       .setColor([255, 0,0])
-  .setFooter({ text: 'Bot Kitki30'});
+  .setFooter({ text: configs.botname});
       interaction.reply({ embeds: [embedesss], ephemeral: true });
       return;}
     }
@@ -52,7 +52,7 @@ module.exports = {
       .setTitle(`Wystąpił błąd podczas wykonywania komendy!`)
       .setDescription(`Użyta komenda: **/${command.data.name}**\nBłąd: **Jesteś na blackliście bota!**`)
       .setColor([255, 0,0])
-  .setFooter({ text: 'Bot Kitki30'});
+  .setFooter({ text: configs.botname});
       interaction.reply({ embeds: [embedess], ephemeral: true })
       return;
     }
@@ -105,7 +105,7 @@ Model.findOneAndUpdate(
       .setTitle(`Wystąpił błąd podczas wykonywania komendy!`)
       .setDescription(`Użyta komenda: **/${command.data.name}**`)
       .setColor([255, 0,0])
-   .setFooter({ text: 'Bot Kitki30'});
+   .setFooter({ text: configs.botname});
       console.error(error);
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({ embeds: [embedes], ephemeral: true });
