@@ -1,9 +1,8 @@
-[![Version][version-shield]](version-url)
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+![downloads](https://img.shields.io/github/downloads/Kitki30/Mechownik/total?style=for-the-badge)
+![version](https://img.shields.io/github/package-json/v/Kitki30/Mechownik/main?style=for-the-badge&label=Version
+)
+![GitHub](https://img.shields.io/github/license/Kitki30/Mechownik?style=for-the-badge)
+
 # Mechownik
 ## Open Source Discord Bot
 
