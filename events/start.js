@@ -30,9 +30,10 @@ module.exports = {
 	once: true,
 	async execute(client) {
     var config = require('../config.js');
+    var lang=config.consoletranslation;
     if(config.clrafterlogin==true)
       console.clear();
-  console.log('[Client] Client Ready!'.green)
+  console.log(`[${lang.client}] ${lang.ready}`.green)
     
     
 	},

@@ -22,21 +22,21 @@
 * SOFTWARE.
 */
 var config = require('./config.js');
+var lang = config.consoletranslation;
 const start = Date.now()
 const express = require("express");
 const app = express();
 const fs = require('node:fs');
-const botname="Bot Mechownik";
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, Partials, EmbedBuilder} = require('discord.js');
 require('dotenv').config();
 require('colors');
-console.log(`[Information]`.blue);
-console.log(`[Name] ${botname}`.green);
-console.log(`[Version] v4(Open Source update)`.yellow);
-console.log(`[Author] Kitki30`.blue)
-console.log(`[Info] Made on discord.js v14`.yellow)
-console.log(`[Info] Copyright (c) 2023 Kitki30\n\n[Info] Logs will be displayed here:`.blue);
+console.log(`[${lang.informations}]`.blue);
+console.log(`[${lang.name}] Mechownik`.green);
+console.log(`[${lang.version}] v4(Open Source update)`.yellow);
+console.log(`[${lang.author}] Kitki30`.blue)
+console.log(`[${lang.info}] ${lang.madeondjs}`.yellow)
+console.log(`[${lang.info}] Copyright (c) 2023 Kitki30\n\n[${lang.info}] ${lang.logstext} `.blue);
 
 //let ratelimited=false;
 // ratelimited = true; // Tryb ratelimitu
@@ -66,8 +66,7 @@ const client = new Client({
 });
 
 
-console.log(`[Bot Runner] Running script.`.yellow);
-console.log(`[FASTSTART] Fast start enabled.`.green);
+
 client.cooldowns = new Collection();
 client.commands = new Collection();
 
@@ -75,22 +74,22 @@ client.commands = new Collection();
 // Event handler start
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
-console.log(`[Events] Event handler loading`.blue);
+console.log(`[${lang.events}] ${lang.eventhandler}`.blue);
 for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);
 	if (event.once) {
-    console.log(`[Events] Event loaded ${event.name}, once`.green)
+    console.log(`[${lang.events}] ${lang.eventload} ${event.name}${lang.eventonce}`.green)
 		client.once(event.name, (...args) => event.execute(...args));
 	} else {
-console.log(`[Events] Event loaded ${event.name}`.green)
+console.log(`[${lang.events}] ${lang.eventload} ${event.name}`.green)
 		client.on(event.name, (...args) => event.execute(...args));
 	}
 }
 
 
 // Event handler end
-console.log(`\n[Commands] Loading commands.`.blue);
+console.log(`\n[${lang.commands}] ${lang.loadingcommands}`.blue);
   const foldersPath = path.join(__dirname, 'commands');
   const commandFolders = fs.readdirSync(foldersPath);
 let totalcommand=0;
@@ -103,14 +102,14 @@ let totalcommand=0;
       // Set a new item in the Collection with the key as the command name and the value as the exported module
       if ('data' in command && 'execute' in command) {
 totalcommand++;
-console.log(`[Commands] Command loaded "${command.data.name}"`.green);
+console.log(`[${lang.commands}] ${lang.commandload} "${command.data.name}"`.green);
         client.commands.set(command.data.name, command);
       } else {
-        console.log(`[Commands] unable to load command.`.yellow);
+        console.log(`[${lang.commands}] ${lang.commandloaderr}`.yellow);
       }
     }
   }
-console.log(`[Commands] Loaded ${totalcommand} commands`.blue); 
+console.log(`[${lang.commands}] ${lang.commandcounterA} ${totalcommand} ${lang.commandcounterB}`.blue); 
    
 const delay = require(`delay`);
   // Construct and prepare an instance of the REST module
@@ -119,16 +118,14 @@ client.login(process.env.TOKEN)
   
     
     
-        .catch((e) => {
-    console.error('Kitki30 Error Handler!\nError logining\n', e);
-});
+      
       
       const mongoose = require('mongoose');
       
 
 mongoose.connect(process.env.MONGODBURL,{ useUnifiedTopology: true, useNewUrlParser: true });
       const stop = Date.now();
-    console.log(`[Client] Time Taken to start Client = ${(stop - start)/1000} seconds`.green);  
+    console.log(`[${lang.client}] ${lang.timetostartclient}${(stop - start)/1000} ${lang.seconds}`.green);  
  
 process.on('unhandledRejection', (reason, promise) => {
     console.error("[ANTI-CRASH] An error has occured and been successfully handled: [unhandledRejection]".red);
@@ -156,8 +153,7 @@ const Topgg = require("@top-gg/sdk")
 const webhook = new Topgg.Webhook(process.env.topgg)
 
 app.post("/topgg/vote", webhook.listener(async vote => {
-  // vote
-  console.log(vote.user);
+  
   let user = vote.user;
   let userobject = await client.users.fetch(user);
     
