@@ -44,8 +44,7 @@ module.exports = {
       
       .setColor([0, 255, 0])
       .setImage(httpcat)
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
     interaction.reply({ embeds: [embed] });
-    console.log('Użyto komendy /httpcat');
   },
 };

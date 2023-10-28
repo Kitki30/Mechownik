@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const querystring = require('querystring');
 const r2          = require('r2');
@@ -33,6 +34,10 @@ module.exports = {
     .setDescription('Wysyła losowe zdjęcie psa.'),
 
   async execute(interaction) {
+    if (config.fundog==false){
+      interaction.reply("Komenda wyłączona przez właściciela bota! ");
+      return;
+    }
     await interaction.reply("Oczekiwanie na obraz z API.")
     // interaction.user is the object representing the User who ran the command
     // interaction.member is the GuildMember object, which represents the user in the specific guild
@@ -46,7 +51,7 @@ module.exports = {
       .setTitle(`Pies :dog2:`)
       .setColor([0, 255, 0])
       .setImage(image.url)
-        .setFooter({ text: 'Bot mechownik'})
+        .setFooter({ text: config.botname})
     interaction.editReply({ content:"", embeds: [embed] });
   },
 };

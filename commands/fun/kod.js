@@ -24,7 +24,7 @@
 var config = require('../../config.js');
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const delay = require(`delay`);
-const config = process.env;
+const configs = process.env;
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('kod')
@@ -38,7 +38,7 @@ module.exports = {
         
       
     
-    if (config.botOn == "true") {
+    if (configs.botOn == "true") {
       if (prop == "skibididom") {
           let 
       embed = new EmbedBuilder()
@@ -97,6 +97,6 @@ module.exports = {
        .setTitle("Nie ma takiego kodu!")
 .setFooter({ text: config.botname})
     interaction.reply({ embeds: [embedErr] });
-    return;}}
+    return;}
   },
 };

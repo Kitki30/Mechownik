@@ -14,6 +14,7 @@
     "@top-gg/sdk": "^3.1.6",
     "@types/node": "^18.0.6",
     "colors": "^1.4.0",
+    "config.js": "^0.1.0",
     "delay": "^5.0.0",
     "discord-api-types": "^0.37.61",
     "discord.js": "^14.9.0",
@@ -27,7 +28,7 @@
     "os-utils": "^0.0.14",
     "play-dl": "^1.9.7",
     "querystring": "^0.2.1",
-    "r2": "^2.0.1", 
+    "r2": "^2.0.1",
     "undici": "^5.22.0"
   }
 }
