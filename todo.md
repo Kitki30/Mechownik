@@ -1,1 +1,0 @@
-[Done] Add config file for storing settings
