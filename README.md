@@ -12,6 +12,10 @@
 - Slash commands
 - Cat and Dog command
 - Not using much ram
+- Open source
+
+### How to add bot
+You can add our public bot to your server or host it yourself
 
 ### Add our public bot to your server
 
@@ -29,7 +33,8 @@ How to start:
 1. Download latest release. 
 2. Unpack downloaded file.
 3. Change .env file with your settings ([see Mechownik bot env variables template](https://github.com/Kitki30/Mechownik/blob/main/README.md#mechownik-bot-env-variable-template))
-4. Run ``node main.js`` command to start bot.
+4. Change config.js settings
+5. Run ``node main.js`` command to start bot.
 **Now bot should work!!!**
 
 ### Mechownik bot env variabls
@@ -73,3 +78,6 @@ Values:
 - dogapikey - Dog Image Api Key, get it [here](https://thedogapi.com/)
 - MONGODBURL - Put mongodb database url here
 - topgg - Put top.gg auth here(if your bot is on top.gg)
+
+### Made with ♥️ by Kitki30
+[https://github.com/Kitki30/Mechownik/](https://github.com/Kitki30/Mechownik/)
