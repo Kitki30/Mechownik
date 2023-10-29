@@ -29,12 +29,13 @@ const delay = require(`delay`);
   
 
 
-client.snipes = new Collection();
+
 module.exports = {
 	name: Events.MessageDelete,
 	once: false,
 	async execute(message) {
     const client = message.client
+    client.snipes = new Collection();
   if (message.guidId === '1133310081321156618') {
     // Handle the event when a message from the specified ID is deleted
     // You can choose not to show the deleted message here
