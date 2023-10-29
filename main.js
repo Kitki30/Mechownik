@@ -142,6 +142,11 @@ try {
       app.listen(80);
 
         const port = process.env.PORT;
+var RateLimit = require('express-rate-limit');
+var limiter = RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // max 100 requests per windowMs
+});
 
   app.get('/', async ({ query }, response) => {
 	
