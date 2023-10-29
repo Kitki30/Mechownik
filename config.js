@@ -9,10 +9,11 @@ config.topgg=true;
 Can be set to true(on) or false(off)
 */
 config.topgglink='https://top.gg/bot/1101105727340286022/vote'; // Put vote link to top.gg(used in vote command)
-config.topggvotetext='Poprostu naciśnij dowolny przycisk na dole, aby wesprzeć mnie w programowaniu bota!'; 
+config.votetext='Poprostu naciśnij dowolny przycisk na dole, aby wesprzeć mnie w programowaniu bota!'; 
 /*
 Enter /vote command embed text here (not included in translations)
 */
+config.topggchannel='1167080670498131969'; //enter channel id for sending embeds on vote.
 config.sendtodo=true;
 // Set this if you want to send new todo entries to channel. Can be true or false
 config.todochannel='1163105932541165660';

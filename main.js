@@ -163,7 +163,7 @@ app.post("/topgg/vote", webhook.listener(async vote => {
   let userobject = await client.users.fetch(user);
     
    
-      let votechannel=await client.channels.fetch('1167080670498131969');
+      let votechannel=await client.channels.fetch(config.topggchannel);
       
         const embed = new EmbedBuilder()
 	.setColor(0x0099FF)
