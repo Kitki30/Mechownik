@@ -23,7 +23,7 @@
 */
 const { Events, Collection, Client ,EmbedBuilder} = require('discord.js');
 const delay = require(`delay`);
-const client = require("/home/runner/PublicBot/main.js");
+
 
 
   
@@ -34,7 +34,7 @@ module.exports = {
 	name: Events.MessageDelete,
 	once: false,
 	async execute(message) {
-    
+    const client = message.client
   if (message.guidId === '1133310081321156618') {
     // Handle the event when a message from the specified ID is deleted
     // You can choose not to show the deleted message here

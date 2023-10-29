@@ -164,7 +164,7 @@ app.post("/topgg/vote", webhook.listener(async vote => {
 	.setColor(0x0099FF)
 	.setTitle('Top.gg')
 	
-	.setDescription(`Użytkownik ${userobject.displayName} zagłosował na bota na top.gg!\nNaciśnij przycisk na dole i zagłosuj!`);
+	.setDescription(`Użytkownik ${userobject.username} zagłosował na bota na top.gg!\nNaciśnij przycisk na dole i zagłosuj!`);
 	votechannel.send({embeds:[embed]});
         const embeddm= new EmbedBuilder()
 	.setColor(0x0099FF)
