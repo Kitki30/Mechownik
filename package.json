@@ -24,7 +24,7 @@
     "libsodium-wrappers": "^0.7.13",
     "moment": "^2.29.4",
     "mongoose": "^7.6.1",
-    "node-fetch": "^3.2.6",
+    "node-fetch": "^3.3.2",
     "os-utils": "^0.0.14",
     "play-dl": "^1.9.7",
     "querystring": "^0.2.1",
