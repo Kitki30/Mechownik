@@ -25,7 +25,7 @@ const { Events, Collection, Client ,EmbedBuilder} = require('discord.js');
 const delay = require(`delay`);
 
 
-
+var config = require('../config.js');
   
 
 

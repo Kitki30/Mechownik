@@ -1,6 +1,8 @@
 var config = {};
 require('colors');
 config.lang='pl';// language. Available languages: en, pl
+config.partnershipchannel="1168168874907291810";
+// Id to channel with partnerships, Leave blank to turn off. 
 config.owner='657229045624471556'; // Your discord id here
 config.ram ='1024'; // Put ram your machine has in MB (Warning: this will not limit ram usage by bot its only for info commands)
 config.botname='Bot Mechownik'; // Put your bots name (for footer of embeds etc.)

@@ -23,11 +23,48 @@
 */
 const { Events,ButtonBuilder, ActionRowBuilder, EmbedBuilder, ButtonStyle} = require('discord.js');
 const delay = require(`delay`);
-
+var config = require('../config.js');
 module.exports = {
 	name: Events.MessageCreate,
 	once: false,
 	async execute(message) {
+    if(message.channel.id==config.partnershipchannel){
+      
+if (message.content.includes('discord.gg/')){ 
+  const partnershipcollection= require('/home/runner/PublicBot/models/partnerships.js')
+  partnershipcollection.findOneAndUpdate(
+      { userid: message.author.id },
+      { $inc: { partnerships: 1 } }, // Inkrementuj wartość pola 'warns' o 1
+      { upsert: true, new: true } // Opcja 'upsert' spowoduje utworzenie nowego dokumentu, jeśli nie istnieje
+    )
+    .then(async (doc) => {
+      const embed = new EmbedBuilder()
+	.setColor(0x0099FF)
+	.setTitle('Partnerstwa')
+	
+	.setDescription(`Nowe partnerstwo!\nDziękujemy za nawiązanie partnerstwa!\nManager: ${message.author}\nRazem masz ${doc.partnerships} partnerstw.`);
+
+    message.reply({ embeds: [embed] });
+    })
+    .catch((error) => {
+      console.log(error);
+      const embed = new EmbedBuilder()
+        .setColor([255, 0, 0])
+        .setTitle(`Błąd!`)
+        .setDescription(`Błąd przy wpisywaniu partnerstwa!`)
+        .setFooter({ text: config.botname})
+        .setTimestamp();
+
+      message.reply({ embeds: [embed] });
+    });
+   
+
+
+
+
+
+}
+    }
     if(message.channel.id == '1163105932541165660') {
   const client = message.client
   let guilds = client.guilds.cache;

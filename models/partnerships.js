@@ -25,14 +25,14 @@ const mongoose =require('mongoose')
 
 const Schema = mongoose.Schema;
 const testschema = new Schema({
-  totalbotuses: {
+  partnerships: {
     type: Number,
     required: true,
     default:0
   },
-  bot:{
-    type: String,
+  userid:{
+    type: Number,
     required: true
   } 
 },{cache:false});
-module.exports = mongoose.model('stats', testschema); 
+module.exports = mongoose.model('partnerships', testschema);
