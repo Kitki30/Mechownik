@@ -34,7 +34,7 @@ How to start:
 2. Unpack downloaded file.
 3. Change .env file with your settings ([see Mechownik bot env variables template](https://github.com/Kitki30/Mechownik/blob/main/README.md#mechownik-bot-env-variable-template))
 4. Change config.js settings
-5. Run ``node main.js`` command to start bot.
+6. Run ``node main.js`` command to start bot.
 **Now bot should work!!!**
 
 ### Mechownik bot env variabls
@@ -74,8 +74,8 @@ Values:
 - PORT - Port, not used for anything leave it 80
 - TOKEN - Put bot token here
 - botOn - Turn on/off executing commands
-- catapikey - Cat Image Api Key, get it [here](https://thecatapi.com/)
-- dogapikey - Dog Image Api Key, get it [here](https://thedogapi.com/)
+- catapikey - Cat Image Api Key, get it [here](https://thecatapi.com/)(can be disabled in config.js)
+- dogapikey - Dog Image Api Key, get it [here](https://thedogapi.com/)(can be disabled in config.js)
 - MONGODBURL - Put mongodb database url here
 - topgg - Put top.gg auth here(if your bot is on top.gg)
 
