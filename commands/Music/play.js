@@ -44,7 +44,7 @@ await interaction.reply("Oczekiwanie na odpowiedź! ")
 
 const { getVoiceConnection } = require('@discordjs/voice');
 
-if (interaction.member.voice.channelId == null){
+/*if (interaction.member.voice.channelId == null){
   const embed = new EmbedBuilder() 
 
   
@@ -59,7 +59,7 @@ if (interaction.member.voice.channelId == null){
   
       await delay(10000);
       interaction.deleteReply()
-return}
+return}*/
 
     const conn = getVoiceConnection(interaction.member.guild.id)
 if (conn) {
@@ -85,8 +85,21 @@ if (conn) {
 
 
 
-const play = require('play-dl'); // Everything
-  const searched = await play.search(reason, { limit : 1 })
+const play = require('play-dl'); 
+    // Everything
+    await play.setToken({
+     spotify : {
+         client_id: process.env.spcid,
+client_secret: process.env.spcs,
+refresh_token: process.env.spre,
+market: 'US'
+     }
+}) // Await this only when s
+    if (play.is_expired()) {
+     await play.refreshToken()
+    }
+    play.spotify("https://open.spotify.com/track/1gAPybZsQhhr7L8WgDneyj?si=n6eWPM3wTyCdEB6MtTCi-w")
+  const searched = await play.search(reason, { source : { spotify : "track" } }) 
   const confirm = new ButtonBuilder()
 			.setCustomId('confirm')
 			.setLabel('Puść')

@@ -38,6 +38,26 @@ console.log(`[${lang.author}] Kitki30`.blue)
 console.log(`[${lang.info}] ${lang.madeondjs}`.yellow)
 console.log(`[${lang.info}] Copyright (c) 2023 Kitki30\n\n[${lang.info}] ${lang.logstext} `.blue);
 
+
+const os = require('os');
+
+let networkInterfaces = os.networkInterfaces();
+
+let nonLocalInterfaces = {};
+for (let inet in networkInterfaces) {
+  let addresses = networkInterfaces[inet];
+  for (let i=0; i<addresses.length; i++) {
+    let address = addresses[i];
+    if (!address.internal) {
+      if (!nonLocalInterfaces[inet]) {
+        nonLocalInterfaces[inet] = [];
+      }
+      nonLocalInterfaces[inet].push(address);
+    }
+  }
+}
+
+console.log(nonLocalInterfaces)
 //let ratelimited=false;
 // ratelimited = true; // Tryb ratelimitu
 //ratelimited=false; //Wyłącz tryb ratelimitu
