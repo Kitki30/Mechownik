@@ -4,7 +4,7 @@
   "description": "Helping package used in Mechownik bot",
   "main": "./dist/main.js",
   "scripts": {
-    "test": "echo Building and testing... && npm run build && mocha",
+    "test": "echo Building and testing... && npm run build && ./node_modules/.bin/mocha",
     "build": "./node_modules/.bin/babel src --presets babel-preset-es2015 --out-dir dist",
     "prepublish": "npm run build"
   },
