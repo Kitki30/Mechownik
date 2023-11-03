@@ -1,6 +1,14 @@
 <head>
 <title>Mechownik</title>
   <script>
+
+const urlParams = new URLSearchParams(window.location.search);
+const easteregg = urlParams.get('eg');
+
+if (easteregg=="yes"){
+  alert("Welcome to easter egg!");
+window.location.replace("https://Kitki30.github.io/Mechownik");
+}
     function addbutton(){
       if (confirm('You will be redirected to discord bot adding site! ')) {
   console.log('Redirecting... Bye!')
