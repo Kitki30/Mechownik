@@ -93,7 +93,7 @@ const play = require('play-dl');
     })
   
   const searched = await play.search(reason, { source : { spotify : "track" } }) 
-  if (!play.sp_validate(url: searched[0].url))
+ 
   const confirm = new ButtonBuilder()
 			.setCustomId('confirm')
 			.setLabel('Puść')
