@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "kitki30-utilities" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "Kitki30-utilities" ]
 
 jobs:
   build:
@@ -27,5 +27,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: node refresh.js
-    - run: node main.js
+    - run: npm run test
+    
