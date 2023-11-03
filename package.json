@@ -1,6 +1,6 @@
 {
   "name": "kitki30-tools",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Helping package used in Mechownik bot",
   "main": "./dist/main.js",
   "scripts": {
