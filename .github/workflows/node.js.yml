@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "kitki30-utilities" ]
+    branches: [ "Kitki30-utilities" ]
   pull_request:
     branches: [ "Kitki30-utilities" ]
 
