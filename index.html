@@ -1,5 +1,16 @@
 <head>
 <title>Mechownik</title>
+  <script>
+    function addbuton(){
+      if (confirm('You will be redirected to discord bot adding site! ')) {
+  console.log('Redirecting... Bye!')
+        window.location.assign("https://discord.com/oauth2/authorize?client_id=1101105727340286022&scope=bot&permissions=8");
+} else {
+alert("Redirect canceled! ")
+      }
+    }
+  </script>
+  
   <style>
     #centereddiv{
       text-align: center;
@@ -17,7 +28,7 @@
   	  cursor:pointer;
 	    color:#ffffff;
   	  font-family:Arial;
-	    font-size:1.0417vw;
+	    font-size:2.0417vw;
 	    padding:1.3021vw;
   	  text-decoration:none;
 	    text-shadow:0px 1px 0px #2f6627;
@@ -31,20 +42,24 @@
     }
     h1 {
       font-family:Arial;
-      font-size: 3.1250vw;
+      font-size: 7.1250vw;
     }
     #add {
       text-align: center;
     }
     p {
       font-family:Arial;
-      font-size: 1.5625vw;
+      font-size: 3.5625vw;
       padding: 0.5208vw;
     } 
     body{
       background-color: #c0c0c0;
       font-family:Arial;
     }
+    #footer{
+      background-color: black;
+      color: white;
+    } 
   </style>
   
 </head>
@@ -62,5 +77,8 @@
 <button type="button" onclick="alert('Not done yet!')">Add bot to your Discord Server!</button>
 <button type="button" onclick="alert('Not done yet!')">Show wiki page!</button>
 </div>
+</section>
+<section id="footer">
+<p>Made with ♥️ by kitki30</p>
 </section>
 </body>
