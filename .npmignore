@@ -1,2 +1,8 @@
 src
 test
+node_modules
+replit.nix
+.replit
+.config
+.cache
+.upm

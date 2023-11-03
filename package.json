@@ -1,10 +1,10 @@
 {
   "name": "kitki30-tools",
-  "version": "1.0.0",
-  "description": "Package for mechownik open source d.js bot",
+  "version": "3.0.0",
+  "description": "Helping package used in Mechownik bot",
   "main": "./dist/main.js",
   "scripts": {
-    "test": "npm run build && mocha",
+    "test": "echo Building and testing... && npm run build && mocha",
     "build": "./node_modules/.bin/babel src --presets babel-preset-es2015 --out-dir dist",
     "prepublish": "npm run build"
   },

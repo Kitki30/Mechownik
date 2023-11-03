@@ -33,3 +33,23 @@ describe('Log', () => {
     
   });
     });
+describe('Info', () => {
+  describe('#Info', () => {
+    it('Should show info about package', () => {
+      const total = main.info();
+      expect(total).to.be.equal(1);
+    });
+    
+    
+  });
+    });
+describe('Crash', () => {
+  describe('#Test Crash', () => {
+    it('Initiates test crash, should handle error.', () => {
+      const total = main.crash();
+      expect(total).to.be.equal(1);
+    });
+    
+    
+  });
+    });
