@@ -44,7 +44,7 @@ await interaction.reply("Oczekiwanie na odpowiedź! ")
 
 const { getVoiceConnection } = require('@discordjs/voice');
 
-/*if (interaction.member.voice.channelId == null){
+if (interaction.member.voice.channelId == null){
   const embed = new EmbedBuilder() 
 
   
@@ -59,7 +59,7 @@ const { getVoiceConnection } = require('@discordjs/voice');
   
       await delay(10000);
       interaction.deleteReply()
-return}*/
+return}
 
     const conn = getVoiceConnection(interaction.member.guild.id)
 if (conn) {
@@ -86,20 +86,14 @@ if (conn) {
 
 
 const play = require('play-dl'); 
-    // Everything
-    await play.setToken({
-     spotify : {
-         client_id: process.env.spcid,
-client_secret: process.env.spcs,
-refresh_token: process.env.spre,
-market: 'US'
-     }
-}) // Await this only when s
-    if (play.is_expired()) {
-     await play.refreshToken()
-    }
-    play.spotify("https://open.spotify.com/track/1gAPybZsQhhr7L8WgDneyj?si=n6eWPM3wTyCdEB6MtTCi-w")
+    play.setToken({
+         soundcloud : {
+             client_id: 'ID'
+         }
+    })
+  
   const searched = await play.search(reason, { source : { spotify : "track" } }) 
+  if (!play.sp_validate(url: searched[0].url))
   const confirm = new ButtonBuilder()
 			.setCustomId('confirm')
 			.setLabel('Puść')
@@ -116,7 +110,9 @@ market: 'US'
   
            .setTitle(`Puścić muzykę?`)
            
-          .setDescription(`Bot wejdzie na kanał i puści **${searched[0].title}**.`)
+
+        .setDescription(`Bot wejdzie na kanał i puści **${searched[0].title}**.`)
+
            .setColor([255,255,0])
            	
           .setFooter({ text: config.botname})
@@ -137,9 +133,9 @@ const connection1 = joinVoiceChannel({
 	guildId: interaction.member.guild.id,
 	adapterCreator: interaction. member.guild.voiceAdapterCreator,
 });
-    interaction.reply({embeds:[], content:"Przygotowywanie..."})
+    interaction.editReply({embeds:[], content:"Przygotowywanie..."})
     const voicec =interaction.member.voice.channelId;
-const stream = await play.stream(searched[0].url)
+const stream = await play.spotify(searched[0].url)
   const { createAudioResource, VoiceConnectionStatus} = require('@discordjs/voice');
   let resource = createAudioResource(stream.stream, {
             inputType: stream.type
