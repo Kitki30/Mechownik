@@ -1,0 +1,48 @@
+#centereddiv{
+    text-align: center;
+  }
+  #start{
+    background-color: #90EE90;
+    text-align: center;
+  }
+  button {
+    top: 2.0833vw;
+      background-color:#44c767;
+      border-radius:1.4583vw;
+      border:1px solid #18ab29;
+      display:inline-block;
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:2.0417vw;
+      padding:1.3021vw;
+      text-decoration:none;
+      text-shadow:0px 1px 0px #2f6627;
+  } 
+  #welc {
+    background-color: #0099ff;
+  }
+  #add {
+    padding-bottom: 2%;
+    background-color: #186fa8;
+  }
+  h1 {
+    font-family:Arial;
+    font-size: 7.1250vw;
+  }
+  #add {
+    text-align: center;
+  }
+  p {
+    font-family:Arial;
+    font-size: 3.5625vw;
+    padding: 0.5208vw;
+  } 
+  body{
+    background-color: #c0c0c0;
+    font-family:Arial;
+  }
+  #footer{
+    background-color: black;
+    color: white;
+  } 
