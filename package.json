@@ -1,0 +1,29 @@
+{
+  "name": "kitki30-tools",
+  "version": "1.0.0",
+  "description": "Package for mechownik open source d.js bot",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "npm run build && mocha",
+    "build": "./node_modules/.bin/babel src --presets babel-preset-es2015 --out-dir dist",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kitki30/Mechownik.git"
+  },
+  "author": "Kitki30",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kitki30/Mechownik/issues"
+  },
+  "homepage": "https://github.com/Kitki30/Mechownik#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.3.10"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
