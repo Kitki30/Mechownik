@@ -9,6 +9,14 @@
 alert("Redirect canceled! ")
       }
     }
+    function wiki(){
+      if (confirm('You will be redirected to Mechownik\'s wiki on GitHub!')) {
+  console.log('Redirecting... Bye!')
+        window.location.assign("https://github.com/Kitki30/Mechownik/wiki/1.-Installing-bot");
+} else {
+alert("Redirect canceled! ")
+      }
+    }
   </script>
   
   <style>
@@ -74,8 +82,8 @@ alert("Redirect canceled! ")
 <section id="add">
 <p>Click button under the text to add bot or to go to wiki page on GitHub!</p>
 <div id="centereddiv">
-<button type="button" onclick="alert('Not done yet!')">Add bot to your Discord Server!</button>
-<button type="button" onclick="alert('Not done yet!')">Show wiki page!</button>
+<button type="button" onclick="addbutton() ">Add bot to your Discord Server!</button>
+<button type="button" onclick=wiki()>Show wiki page!</button>
 </div>
 </section>
 <section id="footer">
