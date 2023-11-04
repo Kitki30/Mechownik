@@ -6,3 +6,6 @@ replit.nix
 .config
 .cache
 .upm
+.log
+.git
+.github

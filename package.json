@@ -1,6 +1,6 @@
 {
   "name": "kitki30-tools",
-  "version": "4.0.2",
+  "version": "4.0.5",
   "description": "Helping package used in Mechownik bot",
   "main": "./dist/main.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "mocha": "^10.2.0", 
     "chai": "^4.3.10"
   },
   "dependencies": {
