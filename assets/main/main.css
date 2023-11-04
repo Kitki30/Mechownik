@@ -5,6 +5,13 @@
     background-color: #90EE90;
     text-align: center;
   }
+  #features{
+    background-color: #ffa600;
+  }
+  h2{
+    text-align:center;
+    font-size: 6vw;
+  }
   button {
     top: 2.0833vw;
       background-color:#44c767;
@@ -19,9 +26,33 @@
       text-decoration:none;
       text-shadow:0px 1px 0px #2f6627;
   } 
+  #centeredbigp{
+    text-align: center;
+    font-size: 4.5625vw;
+  }
   #welc {
     background-color: #0099ff;
   }
+  #catonright{
+    text-align: left;
+  }
+  #pngonleft{
+    text-align: center;
+  }
+  #png{
+    height: 30vh;
+    width: 20vw;
+  }
+    #img {
+      width: 30vw;
+      float: left;
+    }
+    #pngtext {
+      text-align: center;
+      position: relative;
+bottom: 12.5vh;
+      display: inline;
+    }
   #add {
     padding-bottom: 2%;
     background-color: #186fa8;
