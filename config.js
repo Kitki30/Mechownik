@@ -1,5 +1,6 @@
 var config = {};
 require('colors');
+config.devtools=true;// Run Kitki30-tools/dev package
 config.lang='pl';// language. Available languages: en, pl
 config.partnershipchannel="1168168874907291810";
 // Id to channel with partnerships, Leave blank to turn off. 
