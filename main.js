@@ -26,7 +26,7 @@ var lang = config.consoletranslation;
 const start = Date.now()
 const ut=require("kitki30-tools");
 let utdev;
-if(config.devtools){}
+if(config.devtools){
 utdev=require("kitki30-tools/dev");} 
 ut.start();
 ut.connect();
