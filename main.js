@@ -26,7 +26,7 @@ var lang = config.consoletranslation;
 const start = Date.now()
 const ut=require("kitki30-tools");
 ut.start();
-
+ut.connect();;
 const express = require("express");
 const app = express();
 const fs = require('node:fs');
