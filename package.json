@@ -1,11 +1,12 @@
 {
   "name": "kitki30-tools",
-  "version": "4.0.5",
+  "version": "4.5.5",
   "description": "Helping package used in Mechownik bot",
   "main": "./dist/main.js",
   "scripts": {
-    "test": "echo Building and testing... && npm run build && ./node_modules/.bin/mocha",
+    "test": "echo Building and testing... && npm run build && npm run tests",
     "build": "./node_modules/.bin/babel src --presets babel-preset-es2015 --out-dir dist",
+    "tests":"./node_modules/.bin/mocha", 
     "prepublish": "npm run build"
   },
   "repository": {
@@ -21,10 +22,11 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "mocha": "^10.2.0", 
-    "chai": "^4.3.10"
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0"
   },
   "dependencies": {
+    "axios": "^1.6.0",
     "colors": "^1.4.0"
   }
 }

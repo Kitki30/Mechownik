@@ -2,7 +2,8 @@ var chai = require('chai');
 var expect = chai.expect;
 require('colors');
 const main = require('../dist/main.js');
-
+test();
+async function test(){
 describe('Start', () => {
   describe('#Start', () => {
     it('Should start plugin', () => {
@@ -13,6 +14,7 @@ describe('Start', () => {
     
   });
     });
+
 describe('Help', () => {
   describe('#ShowHelp', () => {
     it('Should show all commands' , () => {
@@ -150,4 +152,4 @@ describe('Crash', () => {
     
     
   });
-    });
+    });}

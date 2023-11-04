@@ -1,14 +1,29 @@
 // All Errors:
 /*
+ 1 - Action Executed Successfully
  8 - Bot alredy started
  9 - Log file creation failed
  10 - error deleting file
  11 - start.log doesnt exist
  12 - cant run first run
- 13 - cant write to file
+ 13 - Error Connecting To The   Server
+ 14 - alredy comnected 
 */
 let started=0;
+let connected=0;
 require('colors');
+const conector=require('./request.js')
+async function connect(){
+  if(connected==0){
+    connected=1;
+    
+    return conector.connect();
+  }else{
+    
+    yellow('[Utilities] Alredy connected.') 
+    return 14;
+  }
+}
 function help(){
   
 blue("Welcome to Kitki30-Utilities")
@@ -43,6 +58,7 @@ function start(){
     
     started=1;
     console.log(`[Kitki30 Utilities] Started.`.green);
+    connect()
     return 1;
   }
   else{
@@ -122,4 +138,5 @@ module.exports = {
     info,
     crash, 
     help, 
+  connect,
 }
