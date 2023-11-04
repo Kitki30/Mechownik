@@ -25,7 +25,9 @@ var config = require('./config.js');
 var lang = config.consoletranslation;
 const start = Date.now()
 const ut=require("kitki30-tools");
-const utdev=require("kitki30-tools/dev");
+let utdev;
+if(config.devtools){}
+utdev=require("kitki30-tools/dev");} 
 ut.start();
 ut.connect();
 const express = require("express");
