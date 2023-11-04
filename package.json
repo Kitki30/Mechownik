@@ -1,8 +1,11 @@
 {
   "name": "kitki30-tools",
-  "version": "4.5.5",
+  "version": "4.5.6",
   "description": "Helping package used in Mechownik bot",
   "main": "./dist/main.js",
+  "exports": {
+    "./dev": "./dist/dev.js"
+  },
   "scripts": {
     "test": "echo Building and testing... && npm run build && npm run tests",
     "build": "./node_modules/.bin/babel src --presets babel-preset-es2015 --out-dir dist",

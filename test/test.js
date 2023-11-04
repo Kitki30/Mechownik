@@ -2,6 +2,7 @@ var chai = require('chai');
 var expect = chai.expect;
 require('colors');
 const main = require('../dist/main.js');
+const dev=require('../dist/dev.js')
 test();
 async function test(){
 describe('Start', () => {
@@ -144,6 +145,17 @@ describe('Info', () => {
   });
     });
 describe('Crash', () => {
+  describe('#Dev functions set key', () => {
+    it('Should set key to dev.', () => {
+      const total = dev.set_key("Start");
+      expect(total).to.be.equal("Start");
+    });});
+  describe('#Dev functions on', () => {
+    it('Turn on dev functions.', () => {
+      const total = dev.dev_on();
+      expect(total).to.be.equal(1);
+    });});
+    
   describe('#Test Crash', () => {
     it('Initiates test crash, should handle error.', () => {
       const total = main.crash();
@@ -152,4 +164,38 @@ describe('Crash', () => {
     
     
   });
-    });}
+    });
+describe('Reset', () => {
+  describe('#Reset', () => {
+    it('Should reset temp settings.', () => {
+      const total = main.reset();
+      expect(total).to.be.equal(1);
+    });
+   });
+    describe('#Runlog', () => {
+    it('Should not execute log command and show error message.', () => {
+      const total = main.log('Test');
+      expect(total).to.be.equal(15);
+    });
+    
+    
+  });
+    describe('#Start', () => {
+    it('Should start package.', () => {
+      const total = main.start();
+      expect(total).to.be.equal(1);
+    });
+    
+    
+  });
+    
+  describe('#RunLog2', () => {
+    it('Should log text without errors.', () => {
+      const total = main.log('Test');
+      expect(total).to.be.equal('Test');
+    });
+    
+    
+  });
+    });
+ } 
