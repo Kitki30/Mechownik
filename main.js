@@ -21,15 +21,11 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+
 var config = require('./config.js');
 var lang = config.consoletranslation;
 const start = Date.now()
 const ut=require("kitki30-tools");
-let utdev;
-if(config.devtools){
-utdev=require("kitki30-tools/dev");} 
-ut.start();
-ut.connect();
 const express = require("express");
 const app = express();
 const fs = require('node:fs');
