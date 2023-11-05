@@ -37,6 +37,7 @@
     text-align: left;
   }
   #pngonleft{
+display: flex; 
     text-align: center;
   }
   #png{
