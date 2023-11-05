@@ -50,7 +50,7 @@ ut.connect();
 let utdev;
 if(config.devtools){
 utdev=require("kitki30-tools/dev");} 
-if(config.devkey=""){
+if(config.devkey==""){
   
 }
 else{
