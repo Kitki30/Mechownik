@@ -86,13 +86,16 @@ if (conn) {
 
 
 const play = require('play-dl'); 
+  
+
     play.setToken({
          soundcloud : {
-             client_id: 'ID'
+             client_id: process.env.scid
          }
     })
   
-  const searched = await play.search(reason, { source : { spotify : "track" } }) 
+  
+  const searched = await play.search(reason, { source : { soundcloud : "tracks" } })
  
   const confirm = new ButtonBuilder()
 			.setCustomId('confirm')
@@ -111,7 +114,7 @@ const play = require('play-dl');
            .setTitle(`Puścić muzykę?`)
            
 
-        .setDescription(`Bot wejdzie na kanał i puści **${searched[0].title}**.`)
+        .setDescription(`Bot wejdzie na kanał i puści **${searched[0].name}**.`)
 
            .setColor([255,255,0])
            	
@@ -135,7 +138,7 @@ const connection1 = joinVoiceChannel({
 });
     interaction.editReply({embeds:[], content:"Przygotowywanie..."})
     const voicec =interaction.member.voice.channelId;
-const stream = await play.spotify(searched[0].url)
+const stream = await await play.stream(searched[0].url)
   const { createAudioResource, VoiceConnectionStatus} = require('@discordjs/voice');
   let resource = createAudioResource(stream.stream, {
             inputType: stream.type
