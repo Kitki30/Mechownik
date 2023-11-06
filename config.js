@@ -54,16 +54,15 @@ if(config.devkey==""){
   
 }
 else{
- if( utdev.set_key(config.devkey)==config.devkey){
+ utdev.set_key(config.devkey)
   ut.red(config.devkey)
-    console.log('Fqiled tonset key')
  }
   
   if(config.turnondevoptions){
     if (utdev.dev_on()==16) {
       ut.red('[Utilities/dev] Wrong Key')
-    }
+    
     }
 }
 // Dont remove!!! 
-module.exports = config;
+module.exports =config;
