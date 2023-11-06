@@ -1,3 +1,8 @@
-# Mechownik Site
-Site for mechownik bot
-Made by Kitki30
+---
+description: >-
+  Welcome to Mechownik Docs, place where you can find everything about Mechownik
+  Open Source Discord Bot
+---
+
+# Home
+
