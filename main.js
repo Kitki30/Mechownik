@@ -48,22 +48,8 @@ const nodes = [
     },
 ];
 
-client.riffy = new Riffy(client, nodes, {
-    send: (payload) => {
-        const guild = client.guilds.cache.get(payload.d.guild_id);
-        if (guild) guild.shard.send(payload);
-    },
-    defaultSearchPlatform: "spsearch",
-    restVersion: "v4" // or v3 based on your lavalink version
-});
-client.on('voiceStateUpdate', (oldVoice, newVoice) => {
-    const player = client.riffy.players.get(oldVoice.guild.id);
-    if (!player) return;
 
-    if (!newVoice.guild.members.me.voice.channel) {
-        player.destroy();
-    }
-})
+
 //let ratelimited=false;
 // ratelimited = true; // Tryb ratelimitu
 //ratelimited=false; //Wyłącz tryb ratelimitu
@@ -144,7 +130,21 @@ client.login(process.env.TOKEN)
   
     
     
-      
+      client.riffy = new Riffy(client, nodes, {
+    send: (payload) => {
+        const guild = client.guilds.cache.get(payload.d.guild_id);
+        if (guild) guild.shard.send(payload);
+    },
+    defaultSearchPlatform: "spsearch",
+    restVersion: "v4" // or v3 based on your lavalink version
+});client.riffy = new Riffy(client, nodes, {
+    send: (payload) => {
+        const guild = client.guilds.cache.get(payload.d.guild_id);
+        if (guild) guild.shard.send(payload);
+    },
+    defaultSearchPlatform: "spsearch",
+    restVersion: "v4" // or v3 based on your lavalink version
+});
       
       const mongoose = require('mongoose');
       
