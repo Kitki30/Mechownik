@@ -28,5 +28,15 @@ en.seconds="seconds.";
 en.ready="Client ready!";
 en.config="Config";
 en.cfgload="Config loaded."
+en.startreadytoshow="Ready! Declaring menu function."
+en.cfgshowingmemu="Showing menu"
+en.menunooption="No option selected! Running Client."
+en.startmenu="Mechownik Start Menu"
+en.clientoption='1. Start Client'
+en.refresh='2. Refresh SlashCommands'
+en.refplusclient='3. Refresh SlashCommands and start Client'
+en.exitoption='4. Exit'
+en.nochoicetip="Starting client in 5 seconds if no selection"
+en.kitki='Made by kitki30'
 console.log(`${en.translationload}`.blue); 
 module.exports = en;
