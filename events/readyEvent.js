@@ -21,6 +21,7 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+const { Riffy } = require("riffy");
 const { Events } = require('discord.js');
 const delay = require(`delay`);
 const { ActivityType } = require("discord.js");

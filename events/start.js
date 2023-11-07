@@ -22,13 +22,14 @@
 * SOFTWARE.
 */
 const { Events } = require('discord.js');
-
+const { Riffy } = require("riffy");
 const delay = require(`delay`);
 require('colors');
 module.exports = {
 	name: Events.ClientReady,
 	once: true,
 	async execute(client) {
+    client.riffy.init(client.user.id);
     var config = require('../config.js');
     var lang=config.consoletranslation;
     if(config.clrafterlogin==true)
