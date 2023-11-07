@@ -1,5 +1,12 @@
 var config = {};
 require('colors');
+
+// Kitki30 Utilities Package
+config.devtools=true;// Run Kitki30-tools/dev package
+config.devkey='Start';// Key to turn on dev tools, leave blank when you have no key
+config.turnondevoptions=true;// Turn on dev options. Requires valid key included in Beta branch.
+
+
 config.lang='pl';// language. Available languages: en, pl
 config.partnershipchannel="1168168874907291810";
 // Id to channel with partnerships, Leave blank to turn off. 
@@ -36,4 +43,26 @@ if (config.listconfig==true){
   console.log(`\n[${consolelang.config}]`.green);
   console.log(`Owner ID = ${config.owner}\nRam = ${config.ram}\nBot Name = ${config.botname}\nClear console after bot login = ${config.clrafterlogin}\n[Top.gg Config]\nEnabled = ${config.topgg}\nTop.gg vote link = ${config.topgglink}\n[TODO Config]\nSend todo = ${config.sendtodo}\nTodo channel = ${config.todochannel}\n[Fun commands config]\nCat command = ${config.funcat}\nDog command = ${config.fundog}\n`.blue)
 }
-module.exports = config;
+// Dont remove!!!
+const ut=require("kitki30-tools");
+ut.start();
+ut.connect();
+let utdev;
+if(config.devtools){
+utdev=require("kitki30-tools/dev");} 
+if(config.devkey==""){
+  
+}
+else{
+ utdev.set_key(config.devkey)
+  ut.red(config.devkey)
+ }
+  
+  if(config.turnondevoptions){
+    if (utdev.dev_on()==16) {
+      ut.red('[Utilities/dev] Wrong Key')
+    
+    }
+}
+// Dont remove!!! 
+module.exports =config;

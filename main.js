@@ -21,12 +21,11 @@
 * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 * SOFTWARE.
 */
+const { Riffy } = require("riffy");
 var config = require('./config.js');
 var lang = config.consoletranslation;
 const start = Date.now()
 const ut=require("kitki30-tools");
-ut.start();
-
 const express = require("express");
 const app = express();
 const fs = require('node:fs');
@@ -40,9 +39,31 @@ console.log(`[${lang.version}] v4(Open Source update)`.yellow);
 console.log(`[${lang.author}] Kitki30`.blue)
 console.log(`[${lang.info}] ${lang.madeondjs}`.yellow)
 console.log(`[${lang.info}] Copyright (c) 2023 Kitki30\n\n[${lang.info}] ${lang.logstext} `.blue);
+const nodes = [
+    {
+        host: process.env.lava,
+        password: process.env.lavapass,
+        port: process.env.lavaport,
+        secure: false
+    },
+];
 
+client.riffy = new Riffy(client, nodes, {
+    send: (payload) => {
+        const guild = client.guilds.cache.get(payload.d.guild_id);
+        if (guild) guild.shard.send(payload);
+    },
+    defaultSearchPlatform: "spsearch",
+    restVersion: "v4" // or v3 based on your lavalink version
+});
+client.on('voiceStateUpdate', (oldVoice, newVoice) => {
+    const player = client.riffy.players.get(oldVoice.guild.id);
+    if (!player) return;
 
-
+    if (!newVoice.guild.members.me.voice.channel) {
+        player.destroy();
+    }
+})
 //let ratelimited=false;
 // ratelimited = true; // Tryb ratelimitu
 //ratelimited=false; //Wyłącz tryb ratelimitu
@@ -128,7 +149,7 @@ client.login(process.env.TOKEN)
       const mongoose = require('mongoose');
       
 
-mongoose.connect(process.env.MONGODBURL,{ useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(process.env.MONGODBURL);
       const stop = Date.now();
     console.log(`[${lang.client}] ${lang.timetostartclient}${(stop - start)/1000} ${lang.seconds}`.green);  
  
