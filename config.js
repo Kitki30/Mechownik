@@ -35,7 +35,7 @@ config.listconfig=true; // Show this config on start of bot
     Translations
     Dont change anything herr
 */
-var consolelang = require(`./translations/console_${config.lang}.js`);
+var consolelang = require(`./structures/other/translations/console_${config.lang}.js`);
 config.consoletranslation=consolelang;
 // Console
 console.log(`[${consolelang.config}] ${consolelang.cfgload}`.blue); 
@@ -45,7 +45,6 @@ if (config.listconfig==true){
 }
 // Dont remove!!!
 const ut=require("kitki30-tools");
-ut.start();
 ut.connect();
 let utdev;
 if(config.devtools){
