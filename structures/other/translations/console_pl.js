@@ -28,5 +28,15 @@ en.seconds="sekund.";
 en.ready="Bot gotowy!";
 en.config="Konfiguracja";
 en.cfgload="Konfiguracja załadowana."
+en.startreadytoshow="Gotowe! Deklarowanie funkcji menu."
+en.cfgshowingmemu="Pokazywanie menu"
+en.menunooption="Brak wyboru! Włączanie klienta."
+en.startmenu="Menu Startu Mechownika"
+en.clientoption='1. Włącz klienta'
+en.refresh='2. Odświerz SlashKomendy'
+en.refplusclient='3. Odświerz SlashKomendy i włącz Klienta'
+en.exitoption='4. Wyjdź'
+en.nochoicetip="Klient zostanie włączone automatycznie gdy nic nie wybierzesz po pięciu sekundach"
+en.kitki='Stworzone przez kitki30'
 console.log(`${en.translationload}`.blue); 
 module.exports = en;
