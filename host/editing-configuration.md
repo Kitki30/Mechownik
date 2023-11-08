@@ -9,7 +9,7 @@ You should see something like this:
 Open "config.js" file with Visual Studio Code:\
 You should see something like this:
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Screenshot of config.js file</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Screenshot of config.js file</p></figcaption></figure>
 
 
 

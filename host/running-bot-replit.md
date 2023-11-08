@@ -57,6 +57,25 @@ ignorePorts = false
 
 Change run = "npx nodemon main.js" to your command(keep "run =")
 
+Now you should see something like this:
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+It's Mechownik Start Menu!
+
+From here you can:\
+Start Client(Bot)
+
+Refresh SlashCommands
+
+Refresh SlashCommands and start Client(Bot)
+
+Exit
+
+To select option type number in console and press enter.
+
+If you dont select option in five seconds Client will start!
+
 Now bot is running, go to next page to invite it to your server:
 
 {% content-ref url="inviting-bot-to-your-server.md" %}

@@ -30,7 +30,26 @@ Command 3, Run directly with node.js:
 node main.js
 ```
 
-Now bot is running, go to next page to invite it to your server:
+Now you should see something like this:
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+It's Mechownik Start Menu!
+
+From here you can:\
+Start Client(Bot)
+
+Refresh SlashCommands
+
+Refresh SlashCommands and start Client(Bot)
+
+Exit
+
+To select option type number in console and press enter.
+
+If you dont select option in five seconds Client will start!
+
+Now bot should work!
 
 {% content-ref url="inviting-bot-to-your-server.md" %}
 [inviting-bot-to-your-server.md](inviting-bot-to-your-server.md)

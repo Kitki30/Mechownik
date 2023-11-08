@@ -22,3 +22,7 @@
 * [Running bot](host/running-bot.md)
 * [Running bot (Replit)](host/running-bot-replit.md)
 * [Inviting bot to your server](host/inviting-bot-to-your-server.md)
+
+## Contributing (ADAVANCED)
+
+* [How to contribute](contributing-adavanced/how-to-contribute.md)

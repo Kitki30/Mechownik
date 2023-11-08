@@ -10,6 +10,7 @@ Know basic programming
 * [ ] More than 0,5 GB Ram
 * [ ] Good internet (Connected with cable will be best)
 * [ ] Visual Studio Code (Any version)
+* [ ] 2FA On Discord Account
 
 Go to next page:
 
