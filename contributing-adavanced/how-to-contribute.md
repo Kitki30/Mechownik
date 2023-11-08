@@ -9,7 +9,7 @@ More commands
 
 
 
-## # Adding Translation
+## Adding Translation
 
 Now we have only one type of translation: Console Translation
 
