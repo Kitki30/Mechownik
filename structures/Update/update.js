@@ -1,14 +1,17 @@
 
 const fs = require('fs');
-const http = require('http');
-
+const http = require('https');
+const path=require('path')
+function cb(cb){
+  console.log(cb);
+}
 const download = (url, dest, cb) => {
     const file = fs.createWriteStream(dest);
 
     const request = http.get(url, (response) => {
         // check if response is success
         if (response.statusCode !== 200) {
-            return cb('Response status was ' + response.statusCode);
+            url = url.parse(response.headers.location).hostname
         }
 
         response.pipe(file);
@@ -26,4 +29,4 @@ const download = (url, dest, cb) => {
         fs.unlink(dest, () => cb(err.message)); // delete the (partial) file and then return the error
     });
 };
-download("https://github.com/Kitki30/Mechownik/releases/latest/download/updatepackage.kitkiupdatefile", "../../")
+download("https://github.com/Kitki30/Mechownik/releases/latest/download/update.zip", path.join(__dirname,"../../updatepackage.zip"), cb)
