@@ -41,7 +41,7 @@ module.exports = {
    const target = interaction.options.getMember('user');
     const userid = target.id;
     const guidid = target.guild.id;
-    const Model = require('/home/runner/PublicBot/models/warns.js')
+    const Model = require('../models/warns.js')
 Model.findOneAndUpdate(
       { userId: userid, guildId: guidid },
       { $inc: { warns: 1 } }, // Inkrementuj wartość pola 'warns' o 1

@@ -3,6 +3,7 @@ require('colors');
 /*
 Polish translation by Kitki30
 */
+en.updateproc="5. Aktualizuj"
 en.lang="pl_pl"
 en.translationload =`[Tłumaczenia konsoli] Tłumaczenie konsoli(${en.lang}) załadowane`;
 en.informations="Informacje";

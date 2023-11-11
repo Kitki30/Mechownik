@@ -38,5 +38,6 @@ en.refplusclient='3. Refresh SlashCommands and start Client'
 en.exitoption='4. Exit'
 en.nochoicetip="Starting client in 5 seconds if no selection"
 en.kitki='Made by kitki30'
+en.updateproc="5. Update"
 console.log(`${en.translationload}`.blue); 
 module.exports = en;

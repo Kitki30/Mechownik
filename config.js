@@ -2,12 +2,12 @@ var config = {};
 require('colors');
 
 // Kitki30 Utilities Package
-config.devtools=true;// Run Kitki30-tools/dev package
-config.devkey='Start';// Key to turn on dev tools, leave blank when you have no key
-config.turnondevoptions=true;// Turn on dev options. Requires valid key included in Beta branch.
+config.devtools=false;// Run Kitki30-tools/dev package
+config.devkey='';// Key to turn on dev tools, leave blank when you have no key
+config.turnondevoptions=false;// Turn on dev options. Requires valid key included in Beta branch.
 
 
-config.lang='pl';// language. Available languages: en, pl
+config.lang='en';// language. Available languages: en, pl
 config.partnershipchannel="1168168874907291810";
 // Id to channel with partnerships, Leave blank to turn off. 
 config.owner='657229045624471556'; // Your discord id here

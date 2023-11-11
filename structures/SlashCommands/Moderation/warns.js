@@ -52,7 +52,7 @@ module.exports = {
       guidid = target.guild.id;
     }
  
-    const Model = require('/home/runner/PublicBot/models/warns.js')
+    const Model = require('../models/warns.js')
     Model.findOne({ userId: userid, guildId: guidid })
       .then(async (doc) => {
         if (!doc) {
