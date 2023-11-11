@@ -1,12 +1,22 @@
-const unzipper = require("unzipper")
-const file="updatepackage.zip"
+const decompress = require("decompress");
+const file="../../updatepackage.zip"
 //function to extract ZIP file
-const extractZip = async (file) => {
-    const filePath = __dirname + '/' + file
-    const outputPath = __dirname + '../../updatepackage/'
-    await fs.createReadStream(filePath)
-        .pipe(unzipper.Extract({ path: outputPath }))
-        .promise()
-  console.log(`Package Extracted`);
+async function unzip(file){
+  const fs =require('fs')
+  const path=require('path')
+  console.log(`Extracting: ${file}`);
+    const filePath = path.join(__dirname,file)
+    const outputPath = path.join(__dirname, '../../updatepackage/')
+  console.log(filePath, outputPath);
+    await decompress(filePath,outputPath)
+  .then((files) => {
+    console.log(`Package Extracted`);
+    console.log(files);
   require('./updateprocess.js')
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+  
 }
+unzip(file)

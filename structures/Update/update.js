@@ -1,14 +1,29 @@
-const http = require('http'); // or 'https' for https:// URLs
-const fs = require('fs');
-//To link directly to a download of your latest release asset that was manually uploaded, the suffix is /releases/latest/download/asset-name.zip.
-const file = fs.createWriteStream("updatepackage.zip");
-const request = http.get("https://github.com/Kitki30/Mechownik/releases/latest/download/updatepackage.kitkiupdatefile", function(response) {
-   response.pipe(file);
 
-   // after download completed close filestream
-   file.on("finish", () => {
-       file.close();
-       console.log("Downloaded Update Package");
-     require('./updateunzip.js')
-   });
-});
+const fs = require('fs');
+const http = require('http');
+
+const download = (url, dest, cb) => {
+    const file = fs.createWriteStream(dest);
+
+    const request = http.get(url, (response) => {
+        // check if response is success
+        if (response.statusCode !== 200) {
+            return cb('Response status was ' + response.statusCode);
+        }
+
+        response.pipe(file);
+    });
+
+    // close() is async, call cb after close completes
+    file.on('finish', () => file.close(cb));
+
+    // check for request error too
+    request.on('error', (err) => {
+        fs.unlink(dest, () => cb(err.message)); // delete the (partial) file and then return the error
+    });
+
+    file.on('error', (err) => { // Handle errors
+        fs.unlink(dest, () => cb(err.message)); // delete the (partial) file and then return the error
+    });
+};
+download("https://github.com/Kitki30/Mechownik/releases/latest/download/updatepackage.kitkiupdatefile", "../../")

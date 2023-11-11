@@ -1,6 +1,6 @@
 {
   "name": "Mechownik",
-  "version": "4.8.0",
+  "version": "4.7.0",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -14,6 +14,7 @@
     "@top-gg/sdk": "^3.1.6",
     "@types/node": "^20.8.9",
     "colors": "^1.4.0",
+    "decompress": "^4.2.1",
     "delay": "^5.0.0",
     "discord-api-types": "^0.37.62",
     "discord.js": "^14.13.0",
@@ -31,6 +32,7 @@
     "querystring": "^0.2.1",
     "r2": "^2.0.1",
     "riffy": "^1.0.2",
-    "undici": "^5.22.0"
+    "undici": "^5.22.0",
+    "unzipper": "^0.10.14"
   }
 }
