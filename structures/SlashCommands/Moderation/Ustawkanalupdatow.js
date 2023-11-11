@@ -38,7 +38,7 @@ module.exports = {
     // interaction.user is the object representing the User who ran the command
     // interaction.member is the GuildMember object, which represents the user in the specific guild
    const target = interaction.options.getChannel('kanał');
-    const Model= require('/home/runner/PublicBot/models/botupdatechannel.js')
+    const Model= require('../models/botupdatechannel.js')
 Model.findOneAndUpdate(
       { guild: interaction.guild.id},
       { guild:interaction.guild.id,channel:target.id}, // Inkrementuj wartość pola 'warns' o 1
