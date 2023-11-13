@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@discordjs/voice": "^0.16.0",
+    "@discordjs/voice": "^0.16.1",
     "@top-gg/sdk": "^3.1.6",
     "@types/node": "^20.8.9",
     "colors": "^1.4.0",
